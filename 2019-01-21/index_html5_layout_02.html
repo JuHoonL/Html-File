@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		header {
+			font-size: 50px;
+			background-color: blue;
+			color: white;
+			text-align: center;
+		}
+
+		nav {
+			float: left;
+			width: 20%;
+			padding: 20px;
+		}
+
+		nav ul {
+			list-style-type: none;
+		}
+
+		article {
+			float: left;
+			width: 70%;
+			padding: 20px;
+		}
+
+		section:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		footer {
+			background-color: blue;
+			color: white;
+			text-align: center;
+			padding: 1px;
+		}
+
+	</style>
+</head>
+<body>
+<!--  
+	header
+	Cities
+	문자열 크게
+	바탕색 blue
+	글자색 white
+
+	nav
+	1. London
+	2. paris
+	3. seoul
+	4. newyork
+	머릿글 보이지 않게
+	width : 20%
+	
+	본문
+	런던에 대한 간단한 소개 표시
+	nav와 본문은 가로 방향으로 나누어서 배치
+	width : 70%
+
+	footer
+	본인의 이메일 주소표시
+	바탕색 blue
+	글자색 white
+-->
+
+	<header>Cities</header>
+
+	<section>
+		<nav>
+			<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+			<li><a href="#">New york</a></li>
+			</ul>
+		</nav>
+
+		<article>
+			<h3>London 소개</h3>
+			<p>런던은 영국의 수도이다.</p>
+		</article>
+	</section>
+
+	<footer>CopyRight &copy; juhoon12@nate.com</footer>
+
+</body>
+</html>
