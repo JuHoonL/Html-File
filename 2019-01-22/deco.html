@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Text Decoration</title>
+	<style>
+		/* 스타일 지정 */
+		/* tag에 직접 지정하는 방법 */
+		p {
+			color: blue;
+		}
+
+		/* Id에 지정하는 방법 */
+		/* Id는 PK와 원리가 같아서 한문서 내에서 같은 Id는 선언할 수 없다 */
+		/* 선언되지 않는 Id도 style을 지정 할 수 있다 */
+		#p1 {
+			background-color: yellow;
+		} 
+
+		#p2 {
+			background-color: green;
+		}
+
+		/* class에 지정하는 방법 */
+		/* class는 여러 곳에 동시에 지정하고자 할때 */
+		.no1 {
+			font-size: 20pt;
+		}
+
+		.no2 {
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		#t1 {
+			font-color: blue;
+			font-style: italic;
+			font-size: 20pt
+		}
+
+		#bq {
+			color: blue;
+			font-size: 20pt;
+		}
+	</style>
+</head>
+<body>
+<p>p tag로 작성된 문서 전체(문단)에 효과를 주고자 할 때는 style에서 지정하고, 특별하게 부분적으로만 효과를 주고자 할 때는 각 부분에 tag를 사용
+
+<p>간단한 수식에서 윗첨자 10<sup>2</sup>윗첨자(10의 2숭) 10<sub>2</sub>아랫첨자(2진수의 10) 표시
+
+<p><b>b는 진하게(bold)</b>, <i>i는 이태릭체(italic)</i>, <u>u는 밑줄(under line)</u>, <s>s는 취소줄</s>
+<p>문서를 강조하거나 중요도를 표시하는 tag <strong>strong은 강조</strong>표시
+<p id="p1" class="no1">나는 <b>자랑스런 태극기</b> 앞에 <i>조국의 통일과 번영</i>을 위하여 <u>정의와 진실로서</u> 충성을 다 할 것을 <s>다짐합니다.</s>
+
+<p>"자랑스런 태극기"를 20크기의 초록색 글씨의 고딕체로 변환 (옛날 버젼), "조국의 통일과 번영을 위하여"를 빨간색 30포인트 변경(옛날 버젼)
+<p class="no2">나는 <font color="green" face="고딕체" size="20">자랑스런 태극기</font> 앞에 <span style="font-color:red; font-size:30pt;">조국의 통일과 번영을 위하여</span> 정의와 진실로서 충성을 다 할 것을 다짐합니다.
+
+<p>요즘 방법 span id지정해주고 style에서 변경 
+<p id="p2" class="no1">나는 <span id="t1">자랑스런 태극기</span> 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 바쳐 충성을 다할 것을 굳게 다짐합니다.
+<p class="no2"><insert>나는 자랑스런 태극기(insert)</insert> 앞에 <del>조국과(s tag)</del> <mark>민족의 무궁한 영광</mark>을 위하여 몸과 마음을 바쳐 <span style="background-color: blue;color: yellow;">충성을 다할 것</span>을 굳게 다짐합니다.
+
+<p class="no1">나는 <q>자랑스러운 태극기 앞에 자유롭고 정의로운 대한민국의 무궁한 영광을 위하여 충성을 다할 것을 굳게</q>(q tag 따음표) 다짐합니다
+<p class="no2">나는 자랑스러운 태극기 앞에 <blockquote id="bq" cite url="http//korea.com">자유롭고 <cite>정의로운 대한민국</cite>의 무궁한 영광을 위하여 충성을 다할 것을 굳게 다짐합니다</blockquote>
+
+
+<abbr id="ab" title="국기에 대한 맹세">나는 자랑스러운 태극기 앞에</abbr> 자유롭고 <abbr id="ab" title="republic of korea">정의로운 대한민국</abbr>의 무궁한 영광을 위하여 충성을 다할 것을 굳게 다짐합니다
+
+<footer><address>CopyRight &copy; juhoon12@nate.com</address></footer>
+</body>
+</html>
