@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flex Box</title>
+	<style>
+		
+		body {
+			display: flex; /* 지금부터 이 박스는 flex-container이다 */
+			height: 100%;
+			flex-direction: column; /* flex-item(요소)들을 위에서 아래로 흐르도록 설정하라 */
+			margin: 0px;
+		}
+
+		header {
+			background-color: #ccc;
+
+		}
+
+		section {
+			flex: 0 1 auto;
+
+		}
+
+		footer {
+			flex: 0 1 30px;
+			background-color: rgba(61,100,158,0.4);
+			color: white;
+			text-align: center;
+			padding: 10px;
+		}
+
+		#main-content {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.contents {
+			width: 50px;
+			height: 50px;
+			border: 1px solid red;
+			background-color: #dcdcdc;
+			margin: 5px;
+			text-align: center;
+		}
+
+		#sec-content {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.sec-contents {
+			width: 100px;
+			height: 20px;
+			border: 1px solid blue;
+			background-color: #dcdcdc;
+			margin: 5px;
+		}
+
+		#sc03 {
+			margin-left: auto; /* 오른쪽에 붙어서 정렬됌 */
+		}
+
+		#thir-content {
+			display: flex;
+
+			/* flex-item들이 flex-container 폭 보다 많을 때 어떻게 할 것인가 ?
+			   기본값 : no-wrap : item의 width를 조절해서 다 채워라 
+			   wrap : item이 container에 넘치면 줄을 바꾸어서 표시하라 */
+			flex-wrap: wrap;
+
+			/* 기본값은 row이며 item의 width만큼 표시하고 가로로 나열하라 
+			   column으로 설정하면 세로로 배열하라  */
+			flex-direction: column;
+
+			/* direction과 wrap은 같이 설정하는 경우가 많아서 아래와 같이 사용함 */
+			flex-flow: column wrap;
+		}
+
+		#fourth-content {
+			display: flex;
+			flex-flow: row-reverse wrap; /*reverse는 아래부터 출력 하기 떄문에 순서가 뒤집어짐*/
+
+		}
+
+		#five-content {
+			display: flex;
+			flex-flow: row wrap;
+
+			/*justify-content는 direction이 row일 때 효과적이다 
+			  item들의 가로방향 정렬을 설정 */
+			justify-content: center; /*가운데에 모아서 정렬*/
+		}
+
+		#six-content {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between; /* 레이아웃의 좌우 폭에 맞춰 사이 간격을 일정하게 맞춰서 정렬 */
+		}
+
+		#seven-content {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around; /* 레이아웃의 좌우 폭에 맞춰 주위 간격을 일정하게 맞춰서 정렬 */
+		}
+
+		#eight-content {
+			display: flex;
+			flex-flow: row wrap;
+			/* align-items는 direction이 column일 때 효과적이다
+			   이는 item의 height가 지정되지 않았을 때 내부 문자열 높이만큼만 itembox의 높이를 지정해 준다 */
+			/*align-items: stretch;*/
+			align-items: flex-start;
+		}
+
+		#nine-content {
+			display: flex;
+			flex-flow: row wrap;
+			/* align-items는 direction이 column일 때 효과적이다
+			   이는 item의 height가 지정되지 않았을 때 내부 문자열 높이만큼만 itembox의 높이를 지정해 준다 */
+			/*align-items: stretch;*/
+		}
+
+		/* 내부 문자열을 1로 설정한 div를 선택 */
+		#nine-content div:nth-child(1) {
+
+			/* 특정한 item에 order를 지정해서 임의 순서로 나열하는 방법 
+			   지정 하지 않은 것들은 0이다. 그래서 1로 지정하면 맨 뒤로 간다 */
+			order: 1;
+		}
+
+		#nine-content div:nth-child(3) {
+
+			/* 1번 뒤로 보내고자 할때 그다음 2로 지정 */
+			order: 2;
+		}
+	</style>
+</head>
+<body>
+	<header><h3>flex box연습</h3></header>
+	<section>
+		<ASIDE>
+			
+		</ASIDE>
+		<article id="main-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+			<div class="contents">4</div>
+			<div class="contents">5</div>
+			<div class="contents">6</div>
+			<div class="contents">7</div>
+			<div class="contents">8</div>
+			<div class="contents">9</div>
+			<div class="contents">10</div>
+			<div class="contents">11</div>
+			<div class="contents">12</div>
+			<div class="contents">13</div>
+			<div class="contents">14</div>
+			<div class="contents">15</div>
+			<div class="contents">16</div>
+			<div class="contents">17</div>
+			<div class="contents">18</div>
+		</article>
+		<article id="sec-content">
+			<div id="sc01" class="sec-contents">1</div>
+			<div id="sc02" class="sec-contents">2</div>
+			<div id="sc03" class="sec-contents">3</div>
+		</article>
+		<article id="thir-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="fourth-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="five-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="six-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="seven-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="eight-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+		</article>
+		<article id="nine-content">
+			<div class="contents">1</div>
+			<div class="contents">2</div>
+			<div class="contents">3</div>
+			<div class="contents">4</div>
+			<div class="contents">5</div>
+		</article>
+	</section>
+	<footer>
+		<address>CopyRight &copy; juhoon12@nate.com</address>
+	</footer>
+</body>
+</html>
