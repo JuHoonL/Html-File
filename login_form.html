@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	.login_body {
+		margin: 0;
+		padding: 0;
+		background-color: #344952;
+	}
+	
+	.login_form {
+		width: 300px;
+		padding: 50px;
+		position: absolute;
+		top:43%;
+		left: 43%;
+		background-color: #191919;
+		text-align: center;
+	}
+	
+	.login_form h2 {
+		color: white;
+		font-weight: 500;
+	}
+</style>
+<body class="login_body">
+	<form class="login_form" method="POST">
+		<h2>로그인</h2>
+		<input type="text" name="m_userid" placeholder="사용자 ID">
+		<input type="password" name="m_password" placeholder="비밀번호">
+		<button>로그인</button>
+	</form>
+</body>
+</html>
